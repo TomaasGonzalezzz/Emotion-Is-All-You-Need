@@ -1,0 +1,178 @@
+{
+  "descripcion": "Código, notebook, informe, dependencias, partición y póster originales preservados sin modificaciones. README original reubicado en docs. Se excluyeron caches .pyc; datos, modelo entrenado y aplicación de demostración no estaban incluidos en los archivos recibidos.",
+  "fuentes": [
+    {
+      "archivo": "Garcia_Gonzalez_Informe_PF.zip",
+      "sha256": "a3e247c423da8209790b28d48c023f670abc9f680ffbc47364388be7287fe8fe"
+    },
+    {
+      "archivo": "Garcia_Gonzalez_Poster_PF.pdf",
+      "sha256": "4a18bc985d3eb2df64aa8e64445d96f1f68ee156c17dffea8d1826ad9c43e257"
+    }
+  ],
+  "archivos_originales": [
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/requirements.txt",
+      "archivo_repositorio": "requirements.txt",
+      "sha256": "ceba8c801e8fa30a87b8f040e28403675a26f9b7e558fbcded28da4a8829a91d"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/README.md",
+      "archivo_repositorio": "docs/README_entrega_original.md",
+      "sha256": "ca7d6f932255ab216c897ed9e40f150f65528e8f24345538ca8a454e3304bb42"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/informe.pdf",
+      "archivo_repositorio": "informe.pdf",
+      "sha256": "79ef240f4e86762ecae23791beb897e8700f368ea8e585f7a7addb583f3ca8b9"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/notebooks/main.ipynb",
+      "archivo_repositorio": "notebooks/main.ipynb",
+      "sha256": "7d463b09ef72b57c5aa9b103a8a376d9048ca03841452569666d466db85c7839"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/splits/split.json",
+      "archivo_repositorio": "splits/split.json",
+      "sha256": "9e695ff47c8c8668cd40dd6c213ed41f71d36ec6c47085df26b27043f01a7d79"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/metrics.py",
+      "archivo_repositorio": "src/metrics.py",
+      "sha256": "fb3135f3294f4a4742cbc919cb9c605aef1567ac1cc25581fe361bc8100ca413"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/config.py",
+      "archivo_repositorio": "src/config.py",
+      "sha256": "0576e3f00c638da45d316818fbd3398118b37b848cb431acf98fe2d4c9d401e0"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/normalize.py",
+      "archivo_repositorio": "src/normalize.py",
+      "sha256": "063d8ba30a500a87ddf2a57540733313426c1d0b9a954c75dae99cf7b258da6d"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/evaluation.py",
+      "archivo_repositorio": "src/evaluation.py",
+      "sha256": "09e320b019e80233bd71a038aa36c85d7a5224fb510bfbe6d15cfe0a55ca6ec0"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/predict.py",
+      "archivo_repositorio": "src/predict.py",
+      "sha256": "cd1620713519997db4148e818817e5d0c3dbec4b954d39bd5c6081789cdf2098"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/__init__.py",
+      "archivo_repositorio": "src/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/domain_shift.py",
+      "archivo_repositorio": "src/domain_shift.py",
+      "sha256": "138cb05bcc8c4bb40c83977be8f7834a5d2363c298d174bf3840209cb4b12650"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/plots.py",
+      "archivo_repositorio": "src/plots.py",
+      "sha256": "acff9ce7f7c766f892baed0e733538d528f316f373325673b5e2e794eed7261f"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/splits.py",
+      "archivo_repositorio": "src/splits.py",
+      "sha256": "d0c8dcc9f8b33a32ba9df52c106bc291a916636cd08a6b6b2ca524ab828b79c4"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/data.py",
+      "archivo_repositorio": "src/data.py",
+      "sha256": "ac03ac73a8eb261cbbf619b8e2918d6d49286b7e574e019d450a9d253184eede"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/features/__init__.py",
+      "archivo_repositorio": "src/features/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/features/augment.py",
+      "archivo_repositorio": "src/features/augment.py",
+      "sha256": "d70556df131c6db8b41861424fed9f00d14f71123a2371722acf35f58521a9f8"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/features/egemaps.py",
+      "archivo_repositorio": "src/features/egemaps.py",
+      "sha256": "1d8ac36de9b4610a855a5ac5252831ee75ec24b0a474d517f3ef267ef00eb8e1"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/features/wav2vec.py",
+      "archivo_repositorio": "src/features/wav2vec.py",
+      "sha256": "6f0242dd7be789ecbb40e3f90940ef40e632b89930e9fed7394636685b9bd0e0"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/models/crnn.py",
+      "archivo_repositorio": "src/models/crnn.py",
+      "sha256": "28c62ea983f2657b47d8346a2553ba3da245321882a635445b0df7d4daabf794"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/models/__init__.py",
+      "archivo_repositorio": "src/models/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/models/mlp.py",
+      "archivo_repositorio": "src/models/mlp.py",
+      "sha256": "8f1d7b8ecfd395beed62dd26c93ce7b8d71f109d69a45b962e4a7dfd31a13081"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Informe_PF.zip",
+      "archivo_zip": "Garcia_Gonzalez_Informe_PF/src/models/finetune.py",
+      "archivo_repositorio": "src/models/finetune.py",
+      "sha256": "1442d62dd543b82f1d0c1ee24a5b3147441ea0e0065e3a013f8a35903c66d9c7"
+    },
+    {
+      "fuente": "Garcia_Gonzalez_Poster_PF.pdf",
+      "archivo_repositorio": "docs/Garcia_Gonzalez_Poster_PF.pdf",
+      "sha256": "4a18bc985d3eb2df64aa8e64445d96f1f68ee156c17dffea8d1826ad9c43e257"
+    }
+  ],
+  "archivos_auxiliares_excluidos": [
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/plots.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/normalize.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/data.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/config.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/evaluation.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/domain_shift.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/predict.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/splits.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/metrics.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/__pycache__/__init__.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/features/__pycache__/egemaps.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/features/__pycache__/wav2vec.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/features/__pycache__/augment.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/features/__pycache__/__init__.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/models/__pycache__/finetune.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/models/__pycache__/crnn.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/models/__pycache__/mlp.cpython-311.pyc",
+    "Garcia_Gonzalez_Informe_PF/src/models/__pycache__/__init__.cpython-311.pyc"
+  ]
+}

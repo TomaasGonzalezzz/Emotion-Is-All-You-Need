@@ -1,0 +1,11 @@
+src/** -text
+notebooks/** -text
+splits/** -text
+requirements.txt -text
+docs/README_entrega_original.md -text
+*.pdf binary
+*.png binary
+README.md text eol=lf
+docs/reproduccion.md text eol=lf
+docs/procedencia.json text eol=lf
+docs/verificacion_basica.json text eol=lf

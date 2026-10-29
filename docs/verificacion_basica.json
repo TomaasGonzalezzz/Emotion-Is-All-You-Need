@@ -1,0 +1,18 @@
+{
+  "alcance": "Verificación acotada sin audios, modelos SSL ni redes: sintaxis de módulos y celdas Python (dos magics IPython identificadas aparte); reproducción de split por actor; parseo RAVDESS/EMODB; CMVN pooled y por frames en datos sintéticos, incluida una muestra única. No se ejecutaron extracción de features, GroupKFold de modelos, entrenamiento, inferencia ni evaluación en corpus reales.",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1",
+  "split": {
+    "actores_train": 20,
+    "actores_validation": 4,
+    "sin_solapamiento": true,
+    "particion_reproducida": true
+  },
+  "cmvn_sintetico": {
+    "media_por_hablante_cero": true,
+    "feature_constante_finita": true,
+    "muestra_unica_vector_cero": true
+  },
+  "parseo_ravdess_emodb": "satisfactorio"
+}
