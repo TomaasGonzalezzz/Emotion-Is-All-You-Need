@@ -7,6 +7,8 @@
 
 [Informe](informe.pdf) · [Póster](docs/Garcia_Gonzalez_Poster_PF.pdf) · [Notebook](notebooks/main.ipynb) · [Cómo reproducirlo](docs/reproduccion.md)
 
+**Resultado:** 89 % de accuracy con voces que el modelo nunca escuchó, partiendo de 46,5 % con el modelo base.
+
 ![Póster del proyecto](assets/poster.png)
 
 ## 1. El problema: la voz delata a la persona antes que a la emoción
@@ -33,6 +35,8 @@ La mejora más grande no vino de un modelo más grande. Vino de normalizar cada 
 
 Después combinamos varias representaciones en un ensemble de tres regresiones logísticas y un MLP, con votación ponderada. También probamos un CRNN con atención y fine-tuning completo; con 1.440 audios, los modelos simples generalizaron mejor.
 
+Así fue subiendo la accuracy en cada etapa: 0,465 con eGeMAPS, 0,721 con embeddings, 0,827 al normalizar por hablante, 0,873 con varias representaciones y 0,890 con el ensemble.
+
 ![Recorrido de optimización](assets/recorrido-optimizacion.png)
 
 ![Matriz de confusión con CMVN](assets/confusion-modelo-final.png)
@@ -50,6 +54,10 @@ Para comprobarlo, probamos el modelo sin reentrenar sobre EMODB, un corpus en al
 | EMODB · con CMVN | 0,767 | 0,787 |
 
 Las cifras de EMODB no son directamente comparables con las de RAVDESS: cambian el idioma, el corpus y las clases. CMVN necesita varias grabaciones de cada hablante.
+
+## Conclusión
+
+El salto más grande no vino de usar un modelo más potente, sino de entender qué estaba aprendiendo: restarle la identidad a cada voz mejoró más que cualquier cambio de arquitectura. Con pocos datos, modelos simples sobre buenas representaciones le ganaron a las redes más grandes, y esa misma idea fue la que permitió llevar el modelo a otro idioma.
 
 ## Explorar o ejecutar
 
