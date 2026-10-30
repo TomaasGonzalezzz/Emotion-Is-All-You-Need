@@ -1,19 +1,47 @@
 # Emotion Is All You Need
 ### Reconocimiento de emociones en la voz
 
-¿Cómo reconocer una emoción sin confundirla con la identidad de quien habla? Este proyecto compara representaciones acústicas y modelos de aprendizaje profundo para clasificar ocho emociones, con validación por hablante y una evaluación adicional en otro idioma.
+¿Se puede saber cómo se siente alguien solo por su voz, sin que el modelo termine aprendiendo a reconocer a la persona? Esa pregunta guió nuestro proyecto final de Machine Learning, que presentamos en AI Fest 2026.
 
-**Bautista García y Tomás González** · Proyecto final de Machine Learning, UdeSA · AI Fest 2026.
+**Bautista García y Tomás González** · Aprendizaje Automático y Aprendizaje Profundo, UdeSA · 2026
 
-[Informe](informe.pdf) · [Póster](docs/Garcia_Gonzalez_Poster_PF.pdf) · [Notebook](notebooks/main.ipynb) · [Reproducción](docs/reproduccion.md)
+[Informe](informe.pdf) · [Póster](docs/Garcia_Gonzalez_Poster_PF.pdf) · [Notebook](notebooks/main.ipynb) · [Cómo reproducirlo](docs/reproduccion.md)
 
-![Comparación de experimentos del proyecto](assets/recorrido-optimizacion.png)
+![Póster del proyecto](assets/poster.png)
 
-## Del audio a la predicción
+## 1. El problema: la voz delata a la persona antes que a la emoción
 
-Comparamos features eGeMAPS con embeddings de **WavLM, HuBERT y wav2vec 2.0**. El ensemble final combina tres regresiones logísticas y un MLP, con backbones congelados y votación ponderada. También estudiamos CRNN, fine-tuning, aumentación y normalización CMVN por hablante.
+Trabajamos con RAVDESS: 1.440 grabaciones de 24 actores que dicen las mismas frases con ocho emociones (neutral, calma, felicidad, tristeza, enojo, miedo, disgusto y sorpresa).
 
-La evaluación principal utiliza RAVDESS: 1.440 audios, 24 actores y ocho emociones, con GroupKFold de cinco folds por actor.
+Al explorar los datos apareció el primer obstáculo. Las grabaciones se separan mucho más por quién habla que por la emoción: el género, por ejemplo, divide el espacio con claridad. Un modelo descuidado aprende a reconocer voces.
+
+![El género se separa más que la emoción](assets/genero-vs-emocion.png)
+
+Por eso todas las evaluaciones son **por actor** (GroupKFold de cinco folds): las voces del test nunca aparecen en el entrenamiento.
+
+## 2. Qué representación del audio usar
+
+Comparamos 88 features acústicas clásicas (eGeMAPS) con los embeddings de tres modelos de voz preentrenados: wav2vec 2.0, HuBERT y WavLM. Los usamos congelados, sin reentrenarlos.
+
+Un hallazgo que no esperábamos: las capas intermedias de estos modelos capturan la emoción mejor que la última.
+
+![Rendimiento según la capa de wav2vec](assets/capas-wav2vec.png)
+
+## 3. Restarle a cada voz su propio punto neutro
+
+La mejora más grande no vino de un modelo más grande. Vino de normalizar cada audio respecto del promedio de su hablante (CMVN por hablante): así el modelo ve cuánto se aparta la voz de lo habitual en esa persona, que es justamente donde está la emoción.
+
+Después combinamos varias representaciones en un ensemble de tres regresiones logísticas y un MLP, con votación ponderada. También probamos un CRNN con atención y fine-tuning completo; con 1.440 audios, los modelos simples generalizaron mejor.
+
+![Recorrido de optimización](assets/recorrido-optimizacion.png)
+
+![Matriz de confusión con CMVN](assets/confusion-modelo-final.png)
+
+Las confusiones que quedan tienen sentido: tristeza con calma (las dos son de baja activación) y felicidad con sorpresa.
+
+## 4. ¿Aprende emoción o aprende RAVDESS?
+
+Para comprobarlo, probamos el modelo sin reentrenar sobre EMODB, un corpus en alemán con 454 audios y seis emociones compartidas. La normalización por hablante resultó clave también para este cambio de idioma.
 
 | Evaluación | Accuracy | Macro F1 |
 | --- | ---: | ---: |
@@ -21,20 +49,18 @@ La evaluación principal utiliza RAVDESS: 1.440 audios, 24 actores y ocho emocio
 | EMODB · sin CMVN | 0,570 | 0,578 |
 | EMODB · con CMVN | 0,767 | 0,787 |
 
-EMODB contiene 454 audios y seis emociones compartidas. Cambian idioma, corpus y clases; sus métricas no son directamente equivalentes a las de RAVDESS. CMVN requiere varias grabaciones por hablante: estos resultados no describen una predicción aislada sobre una voz desconocida.
+Las cifras de EMODB no son directamente comparables con las de RAVDESS: cambian el idioma, el corpus y las clases. CMVN necesita varias grabaciones de cada hablante.
 
 ## Explorar o ejecutar
 
-El notebook conserva las salidas de los experimentos. Para reproducirlos, usar Python 3.11 y seguir la [guía de instalación, datos y entrenamiento](docs/reproduccion.md).
-
-La CLI de predicción es:
+El notebook conserva las salidas de todos los experimentos, así que se puede recorrer sin entrenar nada. Para reproducirlo hacen falta Python 3.11 y los corpus; los pasos están en la [guía de reproducción](docs/reproduccion.md).
 
 ~~~sh
 python -m src.predict ruta/al/audio.wav
 ~~~
 
-Requiere generar antes el modelo **data/processed/final_model.pkl**. El repositorio no incluye ese modelo, los corpus ni la interfaz en vivo mencionada en el póster.
+La predicción necesita el modelo **data/processed/final_model.pkl**, que se genera desde el notebook. El repositorio no incluye los corpus, el modelo entrenado ni la interfaz en vivo del póster.
 
 **Herramientas:** Python, PyTorch, Transformers, scikit-learn, OpenSMILE, NumPy y pandas.
 
-Los resultados de la tabla proceden de la entrega original. El [detalle técnico](DOCUMENTACION.md) conserva la descripción de experimentos, verificaciones y archivos.
+[Detalle técnico de experimentos y archivos](DOCUMENTACION.md)
